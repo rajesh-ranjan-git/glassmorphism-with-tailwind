@@ -6,28 +6,21 @@ import {
   ArrowIcon,
   CheckIcon,
   CopyIcon,
-  LayersIcon,
   MoonIcon,
   ShareIcon,
   ShieldIcon,
   SparkleIcon,
   SunIcon,
-  ZapIcon,
 } from "@/components/icons";
 import Orb from "@/components/orb";
 import Navbar from "@/components/navbar";
+import HeroSection from "@/components/heroSection";
+import GlassSurfaces from "@/components/glassSurfaces";
 
 export default function GlassShowcase() {
   const [dark, setDark] = useState(false);
   const [formSent, setFormSent] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText("npm install glass-ui");
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("activeTheme");
@@ -61,232 +54,9 @@ export default function GlassShowcase() {
       <Navbar dark={dark} setDark={setDark} />
 
       <div className="z-1 relative pt-28 pb-30 container">
-        <section className="mb-30 text-center animate-fade-in">
-          <div className="mb-4">
-            <span className="gap-1.5 shadow-md hover:shadow-lg transition-shadow ease-in-out badge badge-gradient">
-              <SparkleIcon /> New — Glassmorphism Design System
-            </span>
-          </div>
-          <h1 className="mx-auto mb-5 max-w-195 font-arima font-bold">
-            Build beautiful&nbsp;
-            <span className="text-gradient">glass interfaces</span> with zero
-            effort
-          </h1>
-          <p className="mx-auto mb-9 max-w-130 text-text-secondary text-lg">
-            A complete design system with CSS tokens, glass surfaces, and every
-            component you need — light & dark, production-ready.
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-3">
-            <button className="gap-2 px-7 py-3 text-lg btn btn-primary">
-              Start building <ArrowIcon />
-            </button>
-            <button className="px-6 py-3 text-lg btn btn-secondary">
-              View components
-            </button>
-          </div>
+        <HeroSection />
 
-          <div className="inline-flex items-center gap-3 mt-8 px-5 py-2.5 glass rounded-(--border-radius-pill)">
-            <code className="text-text-secondary text-sm">
-              <span className="text-accent-purple">$</span> npm install glass-ui
-            </code>
-            <button
-              className={`w-7 h-7 btn-icon ${copied ? "text-accent-purple" : "text-text-muted"}`}
-              onClick={handleCopy}
-            >
-              <CopyIcon />
-            </button>
-          </div>
-        </section>
-
-        <section className="mb-25">
-          <div className="mb-12 text-center">
-            <SectionLabel>Glass Surfaces</SectionLabel>
-            <h2 className="font-alkatra">Every glass variant, side by side</h2>
-          </div>
-
-          <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))]">
-            <div className="p-7 animate-slide-up delay-0 glass">
-              <div className="flex justify-between items-center mb-3">
-                <span className="badge badge-blue">.glass</span>
-                <LayersIcon />
-              </div>
-              <h4 className="mb-2 font-poppins">Base Glass</h4>
-              <p className="text-text-secondary text-sm">
-                Static cards, panels, info boxes. 55% opacity, 16px blur.
-              </p>
-            </div>
-
-            <div
-              className="animate-slide-up glass-interactive"
-              style={{ padding: "28px", animationDelay: "60ms" }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  marginBottom: "12px",
-                }}
-              >
-                <span className="badge badge-purple">.glass-interactive</span>
-                <ZapIcon />
-              </div>
-              <h4
-                style={{
-                  fontFamily: "var(--font-display)",
-                  marginBottom: "8px",
-                }}
-              >
-                Interactive Glass
-              </h4>
-              <p
-                style={{ fontSize: "0.875rem", color: "var(--text-secondary)" }}
-              >
-                Hover me — lift, glow, accent border. For clickable cards.
-              </p>
-            </div>
-
-            {/* .glass-accent */}
-            <div
-              className="animate-slide-up glass-accent"
-              style={{ padding: "28px", animationDelay: "120ms" }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  marginBottom: "12px",
-                }}
-              >
-                <span className="badge badge-gradient">.glass-accent</span>
-                <SparkleIcon />
-              </div>
-              <h4
-                style={{
-                  fontFamily: "var(--font-display)",
-                  marginBottom: "8px",
-                }}
-              >
-                Accent Glass
-              </h4>
-              <p
-                style={{ fontSize: "0.875rem", color: "var(--text-secondary)" }}
-              >
-                Purple-tinted. Selected states, featured items, highlights.
-              </p>
-            </div>
-
-            {/* .glass-subtle */}
-            <div
-              className="animate-slide-up glass-subtle"
-              style={{ padding: "28px", animationDelay: "180ms" }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  marginBottom: "12px",
-                }}
-              >
-                <span
-                  style={{
-                    fontFamily: "var(--font-body)",
-                    fontSize: "0.75rem",
-                    fontWeight: 600,
-                    color: "var(--text-muted)",
-                  }}
-                >
-                  .glass-subtle
-                </span>
-                <ShieldIcon />
-              </div>
-              <h4
-                style={{
-                  fontFamily: "var(--font-display)",
-                  marginBottom: "8px",
-                }}
-              >
-                Subtle Glass
-              </h4>
-              <p
-                style={{ fontSize: "0.875rem", color: "var(--text-secondary)" }}
-              >
-                Nested panels, code blocks, secondary content. 8px blur.
-              </p>
-            </div>
-
-            {/* .glass-heavy */}
-            <div
-              className="animate-slide-up glass-heavy"
-              style={{ padding: "28px", animationDelay: "240ms" }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  marginBottom: "12px",
-                }}
-              >
-                <span className="badge badge-purple">.glass-heavy</span>
-                <LayersIcon />
-              </div>
-              <h4
-                style={{
-                  fontFamily: "var(--font-display)",
-                  marginBottom: "8px",
-                }}
-              >
-                Heavy Glass
-              </h4>
-              <p
-                style={{ fontSize: "0.875rem", color: "var(--text-secondary)" }}
-              >
-                Modals, drawers, dialogs. 80% opacity, 28px blur.
-              </p>
-            </div>
-
-            {/* Stats card using glass-interactive */}
-            <div
-              className="animate-pulse-glow animate-slide-up glass-interactive"
-              style={{
-                padding: "28px",
-                animationDelay: "300ms",
-                borderColor: "var(--glass-border-accent)",
-              }}
-            >
-              <p
-                style={{
-                  fontSize: "0.75rem",
-                  fontWeight: 600,
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  color: "var(--accent-purple)",
-                  marginBottom: "8px",
-                }}
-              >
-                Featured Card
-              </p>
-              <div
-                style={{
-                  fontSize: "2.5rem",
-                  fontFamily: "var(--font-display)",
-                  fontWeight: 800,
-                  marginBottom: "4px",
-                }}
-              >
-                <span className="text-gradient">98%</span>
-              </div>
-              <p
-                style={{ fontSize: "0.875rem", color: "var(--text-secondary)" }}
-              >
-                Glass-interactive with pulse-glow animation
-              </p>
-            </div>
-          </div>
-        </section>
+        <GlassSurfaces />
 
         {/* ══════════════════════════════════════════════
             SECTION 3 — BUTTONS
