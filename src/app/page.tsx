@@ -57,6 +57,7 @@ export default function GlassShowcase() {
         <HeroSection />
 
         <GlassSurfaces />
+        {/* Done till here */}
 
         {/* ══════════════════════════════════════════════
             SECTION 3 — BUTTONS

@@ -25,164 +25,61 @@ const GlassSurfaces = () => {
             Static cards, panels, info boxes. 55% opacity, 16px blur.
           </p>
         </div>
-        {/* Done till here */}
 
-        <div
-          className="animate-slide-up glass-interactive"
-          style={{ padding: "28px", animationDelay: "60ms" }}
-        >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              marginBottom: "12px",
-            }}
-          >
+        <div className="p-7 animate-slide-up delay-60 glass-interactive">
+          <div className="flex justify-between items-center mb-3">
             <span className="badge badge-purple">.glass-interactive</span>
             <ZapIcon />
           </div>
-          <h4
-            style={{
-              fontFamily: "var(--font-display)",
-              marginBottom: "8px",
-            }}
-          >
-            Interactive Glass
-          </h4>
-          <p style={{ fontSize: "0.875rem", color: "var(--text-secondary)" }}>
+          <h4 className="mb-2 font-poppins">Interactive Glass</h4>
+          <p className="text-text-secondary text-sm">
             Hover me — lift, glow, accent border. For clickable cards.
           </p>
         </div>
 
-        {/* .glass-accent */}
-        <div
-          className="animate-slide-up glass-accent"
-          style={{ padding: "28px", animationDelay: "120ms" }}
-        >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              marginBottom: "12px",
-            }}
-          >
+        <div className="p-7 animate-slide-up delay-120 glass-accent">
+          <div className="flex justify-between items-center mb-3">
             <span className="badge badge-gradient">.glass-accent</span>
             <SparkleIcon />
           </div>
-          <h4
-            style={{
-              fontFamily: "var(--font-display)",
-              marginBottom: "8px",
-            }}
-          >
-            Accent Glass
-          </h4>
-          <p style={{ fontSize: "0.875rem", color: "var(--text-secondary)" }}>
+          <h4 className="mb-2 font-poppins">Accent Glass</h4>
+          <p className="text-text-secondary text-sm">
             Purple-tinted. Selected states, featured items, highlights.
           </p>
         </div>
 
-        {/* .glass-subtle */}
-        <div
-          className="animate-slide-up glass-subtle"
-          style={{ padding: "28px", animationDelay: "180ms" }}
-        >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              marginBottom: "12px",
-            }}
-          >
-            <span
-              style={{
-                fontFamily: "var(--font-body)",
-                fontSize: "0.75rem",
-                fontWeight: 600,
-                color: "var(--text-muted)",
-              }}
-            >
+        <div className="p-7 animate-slide-up delay-180 glass-subtle">
+          <div className="flex justify-between items-center mb-3">
+            <span className="font-poppins font-semibold text-text-muted text-xs">
               .glass-subtle
             </span>
             <ShieldIcon />
           </div>
-          <h4
-            style={{
-              fontFamily: "var(--font-display)",
-              marginBottom: "8px",
-            }}
-          >
-            Subtle Glass
-          </h4>
-          <p style={{ fontSize: "0.875rem", color: "var(--text-secondary)" }}>
+          <h4 className="mb-2 font-poppins">Subtle Glass</h4>
+          <p className="text-text-secondary text-sm">
             Nested panels, code blocks, secondary content. 8px blur.
           </p>
         </div>
 
-        {/* .glass-heavy */}
-        <div
-          className="animate-slide-up glass-heavy"
-          style={{ padding: "28px", animationDelay: "240ms" }}
-        >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              marginBottom: "12px",
-            }}
-          >
+        <div className="p-7 animate-slide-up delay-240 glass-heavy">
+          <div className="flex justify-between items-center mb-3">
             <span className="badge badge-purple">.glass-heavy</span>
             <LayersIcon />
           </div>
-          <h4
-            style={{
-              fontFamily: "var(--font-display)",
-              marginBottom: "8px",
-            }}
-          >
-            Heavy Glass
-          </h4>
-          <p style={{ fontSize: "0.875rem", color: "var(--text-secondary)" }}>
+          <h4 className="mb-2 font-poppins">Heavy Glass</h4>
+          <p className="text-text-secondary text-sm">
             Modals, drawers, dialogs. 80% opacity, 28px blur.
           </p>
         </div>
 
-        {/* Stats card using glass-interactive */}
-        <div
-          className="animate-pulse-glow animate-slide-up glass-interactive"
-          style={{
-            padding: "28px",
-            animationDelay: "300ms",
-            borderColor: "var(--glass-border-accent)",
-          }}
-        >
-          <p
-            style={{
-              fontSize: "0.75rem",
-              fontWeight: 600,
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              color: "var(--accent-purple)",
-              marginBottom: "8px",
-            }}
-          >
+        <div className="p-7 border-glass-border-accent animate-pulse-glow animate-slide-up delay-300 glass-interactive">
+          <p className="font-semibold text-xs uppercase tracking-widest text-accent-purple">
             Featured Card
           </p>
-          <div
-            style={{
-              fontSize: "2.5rem",
-              fontFamily: "var(--font-display)",
-              fontWeight: 800,
-              marginBottom: "4px",
-            }}
-          >
+          <div className="mb-1 font-poppins font-extrabold text-[2.5rem]">
             <span className="text-gradient">98%</span>
           </div>
-          <p style={{ fontSize: "0.875rem", color: "var(--text-secondary)" }}>
+          <p className="text-text-secondary text-sm">
             Glass-interactive with pulse-glow animation
           </p>
         </div>
