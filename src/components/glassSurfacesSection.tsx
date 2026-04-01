@@ -6,7 +6,7 @@ import {
   ZapIcon,
 } from "@/components/icons";
 
-const GlassSurfaces = () => {
+const GlassSurfacesSection = () => {
   return (
     <section className="mb-25">
       <div className="mb-12 text-center">
@@ -88,4 +88,4 @@ const GlassSurfaces = () => {
   );
 };
 
-export default GlassSurfaces;
+export default GlassSurfacesSection;

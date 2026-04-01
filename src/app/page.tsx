@@ -5,9 +5,7 @@ import SectionLabel from "@/components/sectionLabel";
 import {
   ArrowIcon,
   CheckIcon,
-  CopyIcon,
   MoonIcon,
-  ShareIcon,
   ShieldIcon,
   SparkleIcon,
   SunIcon,
@@ -15,7 +13,8 @@ import {
 import Orb from "@/components/orb";
 import Navbar from "@/components/navbar";
 import HeroSection from "@/components/heroSection";
-import GlassSurfaces from "@/components/glassSurfaces";
+import GlassSurfacesSection from "@/components/glassSurfacesSection";
+import ButtonsSection from "@/components/buttonsSection";
 
 export default function GlassShowcase() {
   const [dark, setDark] = useState(false);
@@ -56,102 +55,10 @@ export default function GlassShowcase() {
       <div className="z-1 relative pt-28 pb-30 container">
         <HeroSection />
 
-        <GlassSurfaces />
+        <GlassSurfacesSection />
+
+        <ButtonsSection />
         {/* Done till here */}
-
-        {/* ══════════════════════════════════════════════
-            SECTION 3 — BUTTONS
-        ══════════════════════════════════════════════ */}
-        <section style={{ marginBottom: "100px" }}>
-          <div style={{ textAlign: "center", marginBottom: "48px" }}>
-            <SectionLabel>Button System</SectionLabel>
-            <h2 style={{ fontFamily: "var(--font-display)" }}>
-              Four variants, one system
-            </h2>
-          </div>
-
-          <div className="glass" style={{ padding: "40px" }}>
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "16px",
-                alignItems: "center",
-                marginBottom: "32px",
-              }}
-            >
-              <button className="btn btn-primary" style={{ gap: "8px" }}>
-                Primary Button <ArrowIcon />
-              </button>
-              <button className="btn btn-secondary">Secondary Button</button>
-              <button className="btn btn-ghost">Ghost Button</button>
-              <button
-                className="btn-icon"
-                aria-label="Copy"
-                style={{ color: "var(--text-secondary)" }}
-              >
-                <CopyIcon />
-              </button>
-              <button
-                className="btn-icon"
-                aria-label="Share"
-                style={{ color: "var(--text-secondary)" }}
-              >
-                <ShareIcon />
-              </button>
-            </div>
-
-            <div className="divider" />
-
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "12px",
-                alignItems: "center",
-              }}
-            >
-              <span
-                style={{
-                  fontSize: "0.8125rem",
-                  color: "var(--text-muted)",
-                  marginRight: "4px",
-                }}
-              >
-                Sizes:
-              </span>
-              <button
-                className="btn btn-primary"
-                style={{ padding: "6px 14px", fontSize: "0.8125rem" }}
-              >
-                Small
-              </button>
-              <button
-                className="btn btn-primary"
-                style={{ padding: "10px 24px", fontSize: "0.9375rem" }}
-              >
-                Medium
-              </button>
-              <button
-                className="btn btn-primary"
-                style={{ padding: "14px 32px", fontSize: "1.0625rem" }}
-              >
-                Large
-              </button>
-              <button
-                className="btn btn-primary"
-                style={{
-                  padding: "12px 24px",
-                  opacity: 0.5,
-                  cursor: "not-allowed",
-                }}
-                disabled
-              >
-                Disabled
-              </button>
-            </div>
-          </div>
-        </section>
 
         {/* ══════════════════════════════════════════════
             SECTION 4 — BADGES & TAGS
