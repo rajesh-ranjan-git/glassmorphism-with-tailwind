@@ -55,170 +55,67 @@ export default function GlassShowcase() {
   }, []);
 
   return (
-    <main
-      className=""
-      style={{
-        fontFamily: "var(--font-body)",
-        color: "var(--text-primary)",
-        background: "var(--bg-page)",
-        minHeight: "100dvh",
-        overflowX: "hidden",
-      }}
-    >
+    <main className="bg-bg-page min-h-dvh overflow-x-hidden font-poppins text-text-primary">
       <Orb />
 
       <Navbar dark={dark} setDark={setDark} />
 
-      <div
-        className="container"
-        style={{
-          position: "relative",
-          zIndex: 1,
-          paddingTop: "180px",
-          paddingBottom: "120px",
-        }}
-      >
-        {/* ══════════════════════════════════════════════
-            SECTION 1 — HERO
-        ══════════════════════════════════════════════ */}
-        <section
-          style={{ textAlign: "center", marginBottom: "120px" }}
-          className="animate-fade-in"
-        >
-          <div style={{ marginBottom: "16px" }}>
-            <span className="badge badge-gradient" style={{ gap: "6px" }}>
+      <div className="z-1 relative pt-28 pb-30 container">
+        <section className="mb-30 text-center animate-fade-in">
+          <div className="mb-4">
+            <span className="gap-1.5 shadow-md hover:shadow-lg transition-shadow ease-in-out badge badge-gradient">
               <SparkleIcon /> New — Glassmorphism Design System
             </span>
           </div>
-          <h1
-            style={{
-              fontFamily: "var(--font-display)",
-              marginBottom: "20px",
-              maxWidth: "780px",
-              marginInline: "auto",
-            }}
-          >
-            Build beautiful{" "}
+          <h1 className="mx-auto mb-5 max-w-195 font-arima font-bold">
+            Build beautiful&nbsp;
             <span className="text-gradient">glass interfaces</span> with zero
             effort
           </h1>
-          <p
-            style={{
-              fontSize: "1.125rem",
-              maxWidth: "520px",
-              marginInline: "auto",
-              marginBottom: "36px",
-              color: "var(--text-secondary)",
-            }}
-          >
+          <p className="mx-auto mb-9 max-w-130 text-text-secondary text-lg">
             A complete design system with CSS tokens, glass surfaces, and every
             component you need — light & dark, production-ready.
           </p>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "12px",
-              flexWrap: "wrap",
-            }}
-          >
-            <button
-              className="btn btn-primary"
-              style={{ gap: "8px", padding: "12px 28px", fontSize: "1rem" }}
-            >
+          <div className="flex flex-wrap justify-center items-center gap-3">
+            <button className="gap-2 px-7 py-3 text-lg btn btn-primary">
               Start building <ArrowIcon />
             </button>
-            <button
-              className="btn btn-secondary"
-              style={{ padding: "11px 24px", fontSize: "1rem" }}
-            >
+            <button className="px-6 py-3 text-lg btn btn-secondary">
               View components
             </button>
           </div>
 
-          {/* Install snippet */}
-          <div
-            className="glass"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "12px",
-              marginTop: "32px",
-              padding: "10px 20px",
-              borderRadius: "var(--border-radius-pill)",
-            }}
-          >
-            <code
-              style={{ color: "var(--text-secondary)", fontSize: "0.875rem" }}
-            >
-              <span style={{ color: "var(--accent-purple)" }}>$</span> npm
-              install glass-ui
+          <div className="inline-flex items-center gap-3 mt-8 px-5 py-2.5 glass rounded-(--border-radius-pill)">
+            <code className="text-text-secondary text-sm">
+              <span className="text-accent-purple">$</span> npm install glass-ui
             </code>
             <button
-              className="btn-icon"
+              className={`w-7 h-7 btn-icon ${copied ? "text-accent-purple" : "text-text-muted"}`}
               onClick={handleCopy}
-              style={{
-                width: "28px",
-                height: "28px",
-                color: copied ? "var(--accent-purple)" : "var(--text-muted)",
-              }}
             >
               <CopyIcon />
             </button>
           </div>
         </section>
 
-        {/* ══════════════════════════════════════════════
-            SECTION 2 — GLASS SURFACE VARIANTS
-        ══════════════════════════════════════════════ */}
-        <section style={{ marginBottom: "100px" }}>
-          <div style={{ textAlign: "center", marginBottom: "48px" }}>
+        <section className="mb-25">
+          <div className="mb-12 text-center">
             <SectionLabel>Glass Surfaces</SectionLabel>
-            <h2 style={{ fontFamily: "var(--font-display)" }}>
-              Every glass variant, side by side
-            </h2>
+            <h2 className="font-alkatra">Every glass variant, side by side</h2>
           </div>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: "20px",
-            }}
-          >
-            {/* .glass */}
-            <div
-              className="animate-slide-up glass"
-              style={{ padding: "28px", animationDelay: "0ms" }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  marginBottom: "12px",
-                }}
-              >
+          <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))]">
+            <div className="p-7 animate-slide-up delay-0 glass">
+              <div className="flex justify-between items-center mb-3">
                 <span className="badge badge-blue">.glass</span>
                 <LayersIcon />
               </div>
-              <h4
-                style={{
-                  fontFamily: "var(--font-display)",
-                  marginBottom: "8px",
-                }}
-              >
-                Base Glass
-              </h4>
-              <p
-                style={{ fontSize: "0.875rem", color: "var(--text-secondary)" }}
-              >
+              <h4 className="mb-2 font-poppins">Base Glass</h4>
+              <p className="text-text-secondary text-sm">
                 Static cards, panels, info boxes. 55% opacity, 16px blur.
               </p>
             </div>
 
-            {/* .glass-interactive */}
             <div
               className="animate-slide-up glass-interactive"
               style={{ padding: "28px", animationDelay: "60ms" }}

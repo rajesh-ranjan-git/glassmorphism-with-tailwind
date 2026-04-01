@@ -3,76 +3,29 @@ import { MoonIcon, SparkleIcon, SunIcon } from "@/components/icons";
 
 const Navbar = ({ dark, setDark }: NavbarProps) => {
   return (
-    <nav
-      className="glass-nav"
-      style={{
-        position: "fixed",
-        width: "100%",
-        top: 0,
-        zIndex: "var(--z-sticky)" as any,
-        padding: "0 24px",
-        backdropFilter: "blur(8px)",
-        WebkitBackdropFilter: "blur(24px)",
-      }}
-    >
-      <div
-        className="container"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          height: "64px",
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <div
-            style={{
-              width: "32px",
-              height: "32px",
-              borderRadius: "10px",
-              background: "var(--gradient-brand-vivid)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              boxShadow: "0 4px 12px rgba(139,92,246,0.4)",
-            }}
-          >
+    <nav className="top-0 fixed px-6 w-full glass-nav z-(--z-sticky) backdrop-blur-sm">
+      <div className="flex justify-between items-center h-16 container">
+        <div className="flex items-center gap-2.5">
+          <div className="w-8 h-8 bg-(image:--gradient-brand-vivid) flex items-center justify-center shadow-[0_4px_12px_rgba(139,92,246,0.4)] rounded-md">
             <SparkleIcon />
           </div>
-          <span
-            style={{
-              fontFamily: "var(--font-display)",
-              fontWeight: 700,
-              fontSize: "1.1rem",
-              color: "var(--text-primary)",
-            }}
-          >
+          <span className="font-tourney font-semibold text-gradient text-4xl tracking-wide">
             GlassUI
           </span>
         </div>
 
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <span className="badge badge-blue" style={{ display: "none" }}>
-            v1.0
-          </span>
-          <button className="btn btn-ghost" style={{ fontSize: "0.875rem" }}>
-            Docs
-          </button>
-          <button className="btn btn-ghost" style={{ fontSize: "0.875rem" }}>
-            GitHub
-          </button>
+        <div className="flex items-center gap-2">
+          <span className="hidden badge badge-blue">v1.0</span>
+          <button className="text-sm btn btn-ghost">Docs</button>
+          <button className="text-sm btn btn-ghost">GitHub</button>
           <button
-            className="btn-icon"
+            className="text-text-secondary btn-icon"
             onClick={() => setDark((d: boolean) => !d)}
             aria-label="Toggle theme"
-            style={{ color: "var(--text-secondary)" }}
           >
             {dark ? <SunIcon /> : <MoonIcon />}
           </button>
-          <button
-            className="btn btn-primary"
-            style={{ fontSize: "0.875rem", padding: "8px 18px" }}
-          >
+          <button className="px-4.5 py-2 text-sm btn btn-primary">
             Get Started
           </button>
         </div>
