@@ -1,5 +1,7 @@
 "use client";
 
+import { useState, useEffect } from "react";
+import SectionLabel from "@/components/sectionLabel";
 import {
   ArrowIcon,
   CheckIcon,
@@ -12,8 +14,8 @@ import {
   SunIcon,
   ZapIcon,
 } from "@/components/icons";
-import SectionLabel from "@/components/sectionLabel";
-import { useState, useEffect } from "react";
+import Orb from "@/components/orb";
+import Navbar from "@/components/navbar";
 
 export default function GlassShowcase() {
   const [dark, setDark] = useState(false);
@@ -21,30 +23,40 @@ export default function GlassShowcase() {
   const [loading, setLoading] = useState(true);
   const [copied, setCopied] = useState(false);
 
-  // Apply theme to <html>
-  useEffect(() => {
-    document.documentElement.setAttribute(
-      "data-theme",
-      dark ? "dark" : "light",
-    );
-    if (dark) document.documentElement.classList.add("dark");
-    else document.documentElement.classList.remove("dark");
-  }, [dark]);
-
-  // Simulate skeleton loading
-  useEffect(() => {
-    const t = setTimeout(() => setLoading(false), 1800);
-    return () => clearTimeout(t);
-  }, []);
-
   const handleCopy = () => {
     navigator.clipboard.writeText("npm install glass-ui");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("activeTheme");
+    if (storedTheme === "dark") setDark(true);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.setAttribute(
+      "data-theme",
+      dark ? "dark" : "light",
+    );
+
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+    localStorage.setItem("activeTheme", dark ? "dark" : "light");
+  }, [dark]);
+
+  useEffect(() => {
+    const t = setTimeout(() => setLoading(false), 1800);
+    return () => clearTimeout(t);
+  }, []);
+
   return (
     <main
+      className=""
       style={{
         fontFamily: "var(--font-body)",
         color: "var(--text-primary)",
@@ -53,123 +65,9 @@ export default function GlassShowcase() {
         overflowX: "hidden",
       }}
     >
-      {/* ── Orb Backgrounds ── */}
-      <div
-        style={{
-          position: "fixed",
-          inset: 0,
-          pointerEvents: "none",
-          zIndex: 0,
-          overflow: "hidden",
-        }}
-      >
-        <div
-          className="orb orb-blue"
-          style={{
-            width: "600px",
-            height: "600px",
-            top: "-100px",
-            left: "-150px",
-          }}
-        />
-        <div
-          className="orb orb-purple"
-          style={{
-            width: "500px",
-            height: "500px",
-            bottom: "0px",
-            right: "-100px",
-          }}
-        />
-        <div
-          className="orb orb-blue"
-          style={{
-            width: "300px",
-            height: "300px",
-            top: "50%",
-            left: "50%",
-            animationDelay: "-8s",
-            opacity: 0.5,
-          }}
-        />
-      </div>
+      <Orb />
 
-      {/* ── NAV ── */}
-      <nav
-        className="glass-nav"
-        style={{
-          position: "fixed",
-          width: "100%",
-          top: 0,
-          zIndex: "var(--z-sticky)" as any,
-          padding: "0 24px",
-          backdropFilter: "blur(8px)",
-          WebkitBackdropFilter: "blur(24px)",
-        }}
-      >
-        <div
-          className="container"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            height: "64px",
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <div
-              style={{
-                width: "32px",
-                height: "32px",
-                borderRadius: "10px",
-                background: "var(--gradient-brand-vivid)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                boxShadow: "0 4px 12px rgba(139,92,246,0.4)",
-              }}
-            >
-              <SparkleIcon />
-            </div>
-            <span
-              style={{
-                fontFamily: "var(--font-display)",
-                fontWeight: 700,
-                fontSize: "1.1rem",
-                color: "var(--text-primary)",
-              }}
-            >
-              GlassUI
-            </span>
-          </div>
-
-          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <span className="badge badge-blue" style={{ display: "none" }}>
-              v1.0
-            </span>
-            <button className="btn btn-ghost" style={{ fontSize: "0.875rem" }}>
-              Docs
-            </button>
-            <button className="btn btn-ghost" style={{ fontSize: "0.875rem" }}>
-              GitHub
-            </button>
-            <button
-              className="btn-icon"
-              onClick={() => setDark((d) => !d)}
-              aria-label="Toggle theme"
-              style={{ color: "var(--text-secondary)" }}
-            >
-              {dark ? <SunIcon /> : <MoonIcon />}
-            </button>
-            <button
-              className="btn btn-primary"
-              style={{ fontSize: "0.875rem", padding: "8px 18px" }}
-            >
-              Get Started
-            </button>
-          </div>
-        </div>
-      </nav>
+      <Navbar dark={dark} setDark={setDark} />
 
       <div
         className="container"
@@ -854,7 +752,7 @@ export default function GlassShowcase() {
                 <input
                   type="text"
                   defaultValue="Focused input"
-                  autoFocus
+                  // autoFocus
                   style={{ marginBottom: "12px" }}
                 />
                 <p

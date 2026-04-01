@@ -1,27 +1,14 @@
 @import "tailwindcss";
 
-/* ============================================================
-   GLASSMORPHISM DESIGN SYSTEM — globals.css
-   Blue × Purple — Light & Dark
-   Next.js / Tailwind-compatible CSS custom properties
-   ============================================================ */
-
-/* @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap'); */
-
-/* ============================================================
-   1. ROOT TOKENS — LIGHT MODE (default)
-   ============================================================ */
 :root {
-  /* --- Accent Palette --- */
-  --accent-blue: #3b82f6; /* vivid sky-blue */
-  --accent-blue-light: #93c5fd; /* soft highlight */
-  --accent-blue-dark: #1d4ed8; /* deep anchor */
+  --accent-blue: #3b82f6;
+  --accent-blue-light: #93c5fd;
+  --accent-blue-dark: #1d4ed8;
 
-  --accent-purple: #8b5cf6; /* electric violet */
-  --accent-purple-light: #c4b5fd; /* lavender tint */
-  --accent-purple-dark: #6d28d9; /* deep plum */
+  --accent-purple: #8b5cf6;
+  --accent-purple-light: #c4b5fd;
+  --accent-purple-dark: #6d28d9;
 
-  /* Gradient helpers — use anywhere a gradient is needed */
   --gradient-brand: linear-gradient(
     135deg,
     var(--accent-blue) 0%,
@@ -40,9 +27,6 @@
     transparent 100%
   );
 
-  /* --- Surface / Glass tokens --- */
-  /*  Glass surfaces sit on top of a blurred background.
-      Adjust --glass-blur to taste (12px = subtle, 24px = heavy). */
   --glass-bg: rgba(255, 255, 255, 0.55);
   --glass-bg-hover: rgba(255, 255, 255, 0.7);
   --glass-bg-strong: rgba(255, 255, 255, 0.8);
@@ -59,9 +43,8 @@
   --glass-shadow-lg:
     0 24px 64px rgba(59, 130, 246, 0.16), 0 8px 24px rgba(139, 92, 246, 0.1);
 
-  /* --- Background --- */
-  --bg-page: #f0f4ff; /* very pale blue-white canvas */
-  --bg-page-alt: #f5f0ff; /* soft lavender alternative */
+  --bg-page: #f0f4ff;
+  --bg-page-alt: #f5f0ff;
   --bg-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
   --bg-orb-1: radial-gradient(
     circle at 20% 20%,
@@ -74,7 +57,6 @@
     transparent 55%
   );
 
-  /* --- Typography --- */
   --font-display: "Syne", sans-serif;
   --font-body: "DM Sans", sans-serif;
 
@@ -86,7 +68,6 @@
   --text-link: var(--accent-blue-dark);
   --text-link-hover: var(--accent-purple);
 
-  /* --- Borders & Dividers --- */
   --border-default: rgba(148, 163, 184, 0.3);
   --border-subtle: rgba(148, 163, 184, 0.15);
   --border-strong: rgba(71, 85, 105, 0.4);
@@ -96,11 +77,9 @@
   --border-radius-xl: 28px;
   --border-radius-pill: 9999px;
 
-  /* --- Interaction States --- */
   --focus-ring: 0 0 0 3px rgba(139, 92, 246, 0.4);
   --focus-ring-blue: 0 0 0 3px rgba(59, 130, 246, 0.4);
 
-  /* --- Spacing Scale (optional, mirrors Tailwind) --- */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -111,12 +90,10 @@
   --space-16: 64px;
   --space-24: 96px;
 
-  /* --- Transition --- */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* --- Z-index ladder --- */
   --z-base: 0;
   --z-raised: 10;
   --z-dropdown: 100;
@@ -125,7 +102,6 @@
   --z-toast: 400;
   --z-tooltip: 500;
 
-  /* --- Semantic Status Tokens --- */
   --status-info-bg: rgba(59, 130, 246, 0.12);
   --status-info-bg-hover: rgba(59, 130, 246, 0.2);
   --status-info-border: rgba(59, 130, 246, 0.35);
@@ -159,12 +135,8 @@
     0 0 16px 3px rgba(239, 68, 68, 0.28), 0 2px 8px rgba(239, 68, 68, 0.15);
 }
 
-/* ============================================================
-   2. DARK MODE OVERRIDES
-   ============================================================ */
 [data-theme="dark"],
 .dark {
-  /* Accents shift slightly warmer / more vivid against dark bg */
   --accent-blue: #60a5fa;
   --accent-blue-light: #bfdbfe;
   --accent-blue-dark: #3b82f6;
@@ -183,7 +155,6 @@
     transparent 100%
   );
 
-  /* Glass becomes dark-frosted */
   --glass-bg: rgba(15, 23, 42, 0.55);
   --glass-bg-hover: rgba(15, 23, 42, 0.7);
   --glass-bg-strong: rgba(15, 23, 42, 0.8);
@@ -196,7 +167,6 @@
   --glass-shadow-lg:
     0 24px 64px rgba(0, 0, 0, 0.45), 0 8px 24px rgba(96, 165, 250, 0.12);
 
-  /* Background */
   --bg-page: #060b18;
   --bg-page-alt: #0a0614;
   --bg-orb-1: radial-gradient(
@@ -210,7 +180,6 @@
     transparent 55%
   );
 
-  /* Typography */
   --text-primary: #f1f5f9;
   --text-secondary: #94a3b8;
   --text-muted: #475569;
@@ -219,7 +188,6 @@
   --text-link: var(--accent-blue-light);
   --text-link-hover: var(--accent-purple-light);
 
-  /* Borders */
   --border-default: rgba(255, 255, 255, 0.1);
   --border-subtle: rgba(255, 255, 255, 0.06);
   --border-strong: rgba(255, 255, 255, 0.2);
@@ -227,7 +195,6 @@
   --focus-ring: 0 0 0 3px rgba(167, 139, 250, 0.45);
   --focus-ring-blue: 0 0 0 3px rgba(96, 165, 250, 0.45);
 
-  /* --- Semantic Status Tokens (dark) --- */
   --status-info-bg: rgba(59, 130, 246, 0.15);
   --status-info-bg-hover: rgba(59, 130, 246, 0.25);
   --status-info-border: rgba(96, 165, 250, 0.4);
@@ -257,7 +224,6 @@
     0 0 20px 4px rgba(239, 68, 68, 0.35), 0 2px 10px rgba(239, 68, 68, 0.2);
 }
 
-/* Auto dark-mode via OS preference (use alongside data-theme for manual toggle) */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --accent-blue: #60a5fa;
@@ -314,9 +280,65 @@
   }
 }
 
-/* ============================================================
-   3. GLOBAL RESET & BASE
-   ============================================================ */
+@theme inline {
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-blue-light: var(--accent-blue-light);
+  --color-accent-blue-dark: var(--accent-blue-dark);
+  --color-accent-purple: var(--accent-purple);
+  --color-accent-purple-light: var(--accent-purple-light);
+  --color-accent-purple-dark: var(--accent-purple-dark);
+
+  --color-bg-page: var(--bg-page);
+  --color-bg-page-alt: var(--bg-page-alt);
+
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-bg-hover: var(--glass-bg-hover);
+  --color-glass-bg-strong: var(--glass-bg-strong);
+  --color-glass-bg-subtle: var(--glass-bg-subtle);
+  --color-glass-border: var(--glass-border);
+  --color-glass-border-accent: var(--glass-border-accent);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-on-glass: var(--text-on-glass);
+  --color-text-on-accent: var(--text-on-accent);
+  --color-text-link: var(--text-link);
+  --color-text-link-hover: var(--text-link-hover);
+
+  --color-status-info: var(--status-info-text);
+  --color-status-info-bg: var(--status-info-bg);
+  --color-status-info-border: var(--status-info-border);
+  --color-status-success: var(--status-success-text);
+  --color-status-success-bg: var(--status-success-bg);
+  --color-status-success-border: var(--status-success-border);
+  --color-status-warning: var(--status-warning-text);
+  --color-status-warning-bg: var(--status-warning-bg);
+  --color-status-warning-border: var(--status-warning-border);
+  --color-status-error: var(--status-error-text);
+  --color-status-error-bg: var(--status-error-bg);
+  --color-status-error-border: var(--status-error-border);
+
+  --radius-sm: var(--border-radius-sm);
+  --radius-md: var(--border-radius-md);
+  --radius-lg: var(--border-radius-lg);
+  --radius-xl: var(--border-radius-xl);
+  --radius-pill: var(--border-radius-pill);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+
+  --shadow-glass: var(--glass-shadow);
+  --shadow-glass-hover: var(--glass-shadow-hover);
+  --shadow-glass-lg: var(--glass-shadow-lg);
+  --shadow-focus: var(--focus-ring);
+  --shadow-focus-blue: var(--focus-ring-blue);
+
+  --ease-fast: var(--transition-fast);
+  --ease-base: var(--transition-base);
+  --ease-slow: var(--transition-slow);
+}
+
 *,
 *::before,
 *::after {
@@ -344,7 +366,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Page noise overlay (subtle texture) — add to <body> via ::after */
 body::after {
   content: "";
   position: fixed;
@@ -355,9 +376,6 @@ body::after {
   opacity: 0.4;
 }
 
-/* ============================================================
-   4. TYPOGRAPHY
-   ============================================================ */
 h1,
 h2,
 h3,
@@ -426,7 +444,6 @@ kbd {
   padding: 0.1em 0.4em;
 }
 
-/* Gradient headline — wrap any heading in .text-gradient */
 .text-gradient {
   background: var(--gradient-brand);
   -webkit-background-clip: text;
@@ -434,11 +451,6 @@ kbd {
   background-clip: text;
 }
 
-/* ============================================================
-   5. GLASS UTILITY CLASSES
-   ============================================================ */
-
-/* Base glass card */
 .glass {
   background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur));
@@ -452,9 +464,8 @@ kbd {
     border-color var(--transition-base);
 }
 
-/* Interactive glass (cards, panels that respond to hover) */
 .glass-interactive {
-  composes: glass; /* use @apply in Tailwind: @apply glass */
+  composes: glass;
   cursor: pointer;
 }
 .glass-interactive:hover {
@@ -464,7 +475,6 @@ kbd {
   transform: translateY(-2px);
 }
 
-/* Heavier blur for modals / dialogs */
 .glass-heavy {
   background: var(--glass-bg-strong);
   backdrop-filter: blur(var(--glass-blur-heavy));
@@ -474,7 +484,6 @@ kbd {
   box-shadow: var(--glass-shadow-lg);
 }
 
-/* Subtle / secondary glass — sidebars, secondary panels */
 .glass-subtle {
   background: var(--glass-bg-subtle);
   backdrop-filter: blur(var(--glass-blur-light));
@@ -483,7 +492,6 @@ kbd {
   border-radius: var(--border-radius-md);
 }
 
-/* Accent-tinted glass — highlighted items, selected states */
 .glass-accent {
   background: rgba(139, 92, 246, 0.12);
   backdrop-filter: blur(var(--glass-blur));
@@ -493,7 +501,6 @@ kbd {
   box-shadow: 0 4px 24px rgba(139, 92, 246, 0.15);
 }
 
-/* Frosted navbar */
 .glass-nav {
   background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur-heavy));
@@ -501,10 +508,6 @@ kbd {
   border-bottom: 1px solid var(--glass-border);
   box-shadow: 0 1px 24px rgba(59, 130, 246, 0.08);
 }
-
-/* ============================================================
-   STATUS MESSAGE CLASSES
-   ============================================================ */
 
 .alert {
   display: flex;
@@ -566,7 +569,6 @@ kbd {
   box-shadow: var(--status-error-glow);
 }
 
-/* Persistent glow variants — suffix -glow e.g. .alert-info.alert-glow */
 .alert-glow.alert-info {
   box-shadow: var(--status-info-glow);
 }
@@ -580,7 +582,6 @@ kbd {
   box-shadow: var(--status-error-glow);
 }
 
-/* Alert icon wrapper */
 .alert-icon {
   flex-shrink: 0;
   width: 20px;
@@ -588,7 +589,6 @@ kbd {
   margin-top: 1px;
 }
 
-/* Alert title */
 .alert-title {
   font-family: var(--font-display);
   font-weight: 600;
@@ -597,7 +597,6 @@ kbd {
   color: inherit;
 }
 
-/* Alert dismiss button */
 .alert-dismiss {
   margin-left: auto;
   flex-shrink: 0;
@@ -614,7 +613,6 @@ kbd {
   opacity: 1;
 }
 
-/* @keyframes for pulsing glow — opt-in with .alert-pulse */
 @keyframes alert-pulse-glow-info {
   0%,
   100% {
@@ -665,11 +663,6 @@ kbd {
   animation: alert-pulse-glow-error 2.5s ease-in-out infinite;
 }
 
-/* ============================================================
-   6. BUTTON SYSTEM
-   ============================================================ */
-
-/* Base reset */
 button,
 .btn {
   display: inline-flex;
@@ -699,7 +692,6 @@ button:active,
   transform: scale(0.97);
 }
 
-/* Primary — filled gradient */
 .btn-primary {
   background: var(--gradient-brand-vivid);
   color: var(--text-on-accent);
@@ -712,7 +704,6 @@ button:active,
   transform: translateY(-1px);
 }
 
-/* Secondary — glass button */
 .btn-secondary {
   background: var(--glass-bg);
   color: var(--text-primary);
@@ -728,7 +719,6 @@ button:active,
   box-shadow: var(--glass-shadow);
 }
 
-/* Ghost — minimal */
 .btn-ghost {
   background: transparent;
   color: var(--accent-purple);
@@ -741,7 +731,6 @@ button:active,
   border-color: var(--glass-border-accent);
 }
 
-/* Icon button */
 .btn-icon {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
@@ -757,9 +746,6 @@ button:active,
   border-color: var(--glass-border-accent);
 }
 
-/* ============================================================
-   7. FORM ELEMENTS
-   ============================================================ */
 input,
 textarea,
 select {
@@ -798,9 +784,6 @@ label {
   margin-bottom: var(--space-2);
 }
 
-/* ============================================================
-   8. BADGE / TAG
-   ============================================================ */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -826,7 +809,6 @@ label {
   border: 1px solid var(--glass-border-accent);
 }
 
-/* Dark mode badge overrides */
 [data-theme="dark"] .badge-blue,
 .dark .badge-blue {
   color: var(--accent-blue-light);
@@ -840,9 +822,6 @@ label {
   color: var(--accent-purple-light);
 }
 
-/* ============================================================
-   9. DIVIDER
-   ============================================================ */
 hr,
 .divider {
   border: none;
@@ -864,9 +843,6 @@ hr,
   margin: var(--space-6) 0;
 }
 
-/* ============================================================
-   10. SCROLLBAR
-   ============================================================ */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -882,17 +858,11 @@ hr,
   opacity: 0.8;
 }
 
-/* ============================================================
-   11. SELECTION
-   ============================================================ */
 ::selection {
   background: rgba(139, 92, 246, 0.3);
   color: var(--text-primary);
 }
 
-/* ============================================================
-   12. ANIMATION KEYFRAMES
-   ============================================================ */
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -964,7 +934,6 @@ hr,
   }
 }
 
-/* Utility animation classes */
 .animate-fade-in {
   animation: fade-in 0.4s var(--transition-base) both;
 }
@@ -981,7 +950,6 @@ hr,
   animation: pulse-glow 2.5s ease-in-out infinite;
 }
 
-/* Shimmer loading skeleton */
 .skeleton {
   background: linear-gradient(
     90deg,
@@ -994,9 +962,6 @@ hr,
   border-radius: var(--border-radius-md);
 }
 
-/* ============================================================
-   13. LAYOUT HELPERS
-   ============================================================ */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -1014,7 +979,6 @@ hr,
   align-items: center;
 }
 
-/* Blur orb backgrounds (decorative) — place fixed/absolute in a wrapper */
 .orb {
   position: absolute;
   border-radius: 50%;
@@ -1030,9 +994,6 @@ hr,
   animation-delay: -4s;
 }
 
-/* ============================================================
-   14. REDUCED MOTION
-   ============================================================ */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
