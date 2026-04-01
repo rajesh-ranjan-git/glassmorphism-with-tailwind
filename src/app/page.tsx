@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import SectionLabel from "@/components/sectionLabel";
 import {
   ArrowIcon,
   CheckIcon,
@@ -10,6 +9,7 @@ import {
   SparkleIcon,
   SunIcon,
 } from "@/components/icons";
+import SectionLabel from "@/components/sectionLabel";
 import Orb from "@/components/orb";
 import Navbar from "@/components/navbar";
 import HeroSection from "@/components/heroSection";
@@ -18,6 +18,7 @@ import ButtonsSection from "@/components/buttonsSection";
 import BadgesAndTagsSection from "@/components/badgesAndTagsSection";
 import TypographySection from "@/components/typographySection";
 import FormElementsSection from "@/components/formElementsSection";
+import GradientsSection from "@/components/gradientsSection";
 
 export default function GlassShowcase() {
   const [dark, setDark] = useState(false);
@@ -66,73 +67,15 @@ export default function GlassShowcase() {
         <TypographySection />
 
         <FormElementsSection />
+
+        <GradientsSection />
         {/* Done till here */}
-
-        {/* ══════════════════════════════════════════════
-            SECTION 7 — GRADIENTS SHOWCASE
-        ══════════════════════════════════════════════ */}
-        <section style={{ marginBottom: "100px" }}>
-          <div style={{ textAlign: "center", marginBottom: "48px" }}>
-            <SectionLabel>Gradient Tokens</SectionLabel>
-            <h2 style={{ fontFamily: "var(--font-display)" }}>
-              Every gradient, exposed
-            </h2>
-          </div>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-              gap: "16px",
-            }}
-          >
-            {[
-              {
-                label: "--gradient-brand",
-                style: { background: "var(--gradient-brand)" },
-              },
-              {
-                label: "--gradient-brand-vivid",
-                style: { background: "var(--gradient-brand-vivid)" },
-              },
-              {
-                label: "--gradient-brand-soft",
-                style: { background: "var(--gradient-brand-soft)" },
-              },
-              {
-                label: "--gradient-radial",
-                style: {
-                  background: "var(--gradient-radial)",
-                  border: "1px solid var(--border-default)",
-                },
-              },
-            ].map((g) => (
-              <div
-                key={g.label}
-                className="glass-interactive"
-                style={{ overflow: "hidden" }}
-              >
-                <div style={{ height: "80px", ...g.style }} />
-                <div style={{ padding: "14px 16px" }}>
-                  <code
-                    style={{
-                      fontSize: "0.8rem",
-                      color: "var(--text-secondary)",
-                    }}
-                  >
-                    {g.label}
-                  </code>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
 
         {/* ══════════════════════════════════════════════
             SECTION 8 — ANIMATIONS
         ══════════════════════════════════════════════ */}
-        <section style={{ marginBottom: "100px" }}>
-          <div style={{ textAlign: "center", marginBottom: "48px" }}>
+        <section className="mb-25">
+          <div className="mb-12 text-center">
             <SectionLabel>Animations</SectionLabel>
             <h2 style={{ fontFamily: "var(--font-display)" }}>
               Motion utilities
@@ -215,8 +158,8 @@ export default function GlassShowcase() {
         {/* ══════════════════════════════════════════════
             SECTION 9 — SKELETON LOADER
         ══════════════════════════════════════════════ */}
-        <section style={{ marginBottom: "100px" }}>
-          <div style={{ textAlign: "center", marginBottom: "48px" }}>
+        <section className="mb-25">
+          <div className="mb-12 text-center">
             <SectionLabel>Loading States</SectionLabel>
             <h2 style={{ fontFamily: "var(--font-display)" }}>
               Skeleton shimmer
@@ -386,8 +329,8 @@ export default function GlassShowcase() {
         {/* ══════════════════════════════════════════════
             SECTION 10 — DIVIDERS
         ══════════════════════════════════════════════ */}
-        <section style={{ marginBottom: "100px" }}>
-          <div style={{ textAlign: "center", marginBottom: "48px" }}>
+        <section className="mb-25">
+          <div className="mb-12 text-center">
             <SectionLabel>Dividers</SectionLabel>
             <h2 style={{ fontFamily: "var(--font-display)" }}>
               Separators & section breaks
@@ -413,8 +356,8 @@ export default function GlassShowcase() {
         {/* ══════════════════════════════════════════════
             SECTION 11 — MODAL-STYLE HEAVY GLASS
         ══════════════════════════════════════════════ */}
-        <section style={{ marginBottom: "100px" }}>
-          <div style={{ textAlign: "center", marginBottom: "48px" }}>
+        <section className="mb-25">
+          <div className="mb-12 text-center">
             <SectionLabel>Heavy Glass</SectionLabel>
             <h2 style={{ fontFamily: "var(--font-display)" }}>
               Modal & dialog surfaces
@@ -488,8 +431,8 @@ export default function GlassShowcase() {
         {/* ══════════════════════════════════════════════
             SECTION 12 — PRICING CARDS (real-world use)
         ══════════════════════════════════════════════ */}
-        <section style={{ marginBottom: "100px" }}>
-          <div style={{ textAlign: "center", marginBottom: "48px" }}>
+        <section className="mb-25">
+          <div className="mb-12 text-center">
             <SectionLabel>Real-world Example</SectionLabel>
             <h2 style={{ fontFamily: "var(--font-display)" }}>Pricing cards</h2>
           </div>
@@ -713,8 +656,8 @@ export default function GlassShowcase() {
         {/* ══════════════════════════════════════════════
     SECTION — STATUS MESSAGES
 ══════════════════════════════════════════════ */}
-        <section style={{ marginBottom: "100px" }}>
-          <div style={{ textAlign: "center", marginBottom: "48px" }}>
+        <section className="mb-25">
+          <div className="mb-12 text-center">
             <SectionLabel>Status Messages</SectionLabel>
             <h2 style={{ fontFamily: "var(--font-display)" }}>
               Info, success, warning & error
