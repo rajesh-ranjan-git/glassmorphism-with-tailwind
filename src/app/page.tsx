@@ -15,6 +15,7 @@ import Navbar from "@/components/navbar";
 import HeroSection from "@/components/heroSection";
 import GlassSurfacesSection from "@/components/glassSurfacesSection";
 import ButtonsSection from "@/components/buttonsSection";
+import BadgesAndTagsSection from "@/components/badgesAndTagsSection";
 
 export default function GlassShowcase() {
   const [dark, setDark] = useState(false);
@@ -58,49 +59,9 @@ export default function GlassShowcase() {
         <GlassSurfacesSection />
 
         <ButtonsSection />
+
+        <BadgesAndTagsSection />
         {/* Done till here */}
-
-        {/* ══════════════════════════════════════════════
-            SECTION 4 — BADGES & TAGS
-        ══════════════════════════════════════════════ */}
-        <section style={{ marginBottom: "100px" }}>
-          <div style={{ textAlign: "center", marginBottom: "48px" }}>
-            <SectionLabel>Badges & Tags</SectionLabel>
-            <h2 style={{ fontFamily: "var(--font-display)" }}>
-              Label everything
-            </h2>
-          </div>
-
-          <div className="glass" style={{ padding: "40px" }}>
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "12px",
-                alignItems: "center",
-                marginBottom: "24px",
-              }}
-            >
-              <span className="badge badge-blue">Blue Badge</span>
-              <span className="badge badge-purple">Purple Badge</span>
-              <span className="badge badge-gradient">
-                <SparkleIcon /> Gradient Badge
-              </span>
-              <span className="badge badge-blue">v1.0.0</span>
-              <span className="badge badge-purple">Pro</span>
-              <span className="badge badge-gradient">New</span>
-              <span className="badge badge-blue">Beta</span>
-            </div>
-
-            <div className="divider-gradient" />
-
-            <p style={{ fontSize: "0.875rem", color: "var(--text-secondary)" }}>
-              Use <code>.badge-blue</code> for status/version info,{" "}
-              <code>.badge-purple</code> for premium labels, and{" "}
-              <code>.badge-gradient</code> sparingly for "New" / "Hot" callouts.
-            </p>
-          </div>
-        </section>
 
         {/* ══════════════════════════════════════════════
             SECTION 5 — TYPOGRAPHY
