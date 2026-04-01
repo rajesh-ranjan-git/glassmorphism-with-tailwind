@@ -6,7 +6,7 @@ const BadgesAndTagsSection = () => {
     <section className="mb-25">
       <div className="mb-12 text-center">
         <SectionLabel>Badges & Tags</SectionLabel>
-        <h2 className="font-alkatra">Label everything</h2>
+        <h2>Label everything</h2>
       </div>
 
       <div className="p-10 glass">

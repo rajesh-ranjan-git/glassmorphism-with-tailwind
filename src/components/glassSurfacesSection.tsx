@@ -11,7 +11,7 @@ const GlassSurfacesSection = () => {
     <section className="mb-25">
       <div className="mb-12 text-center">
         <SectionLabel>Glass Surfaces</SectionLabel>
-        <h2 className="font-alkatra">Every glass variant, side by side</h2>
+        <h2>Every glass variant, side by side</h2>
       </div>
 
       <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))]">

@@ -6,7 +6,7 @@ const ButtonsSection = () => {
     <section className="mb-25">
       <div className="mb-12 text-center">
         <SectionLabel>Button System</SectionLabel>
-        <h2 className="font-alkatra">Four variants, one system</h2>
+        <h2>Four variants, one system</h2>
       </div>
 
       <div className="p-10 glass">
