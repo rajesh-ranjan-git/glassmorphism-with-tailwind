@@ -3,87 +3,26 @@ import { ArrowIcon } from "@/components/icons";
 const FooterCtaSection = () => {
   return (
     <section>
-      <div
-        className="glass-heavy"
-        style={{
-          padding: "64px 48px",
-          textAlign: "center",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        {/* Internal orbs */}
-        <div
-          style={{
-            position: "absolute",
-            width: "300px",
-            height: "300px",
-            borderRadius: "50%",
-            background: "var(--gradient-brand-vivid)",
-            opacity: 0.08,
-            top: "-100px",
-            right: "-80px",
-            filter: "blur(40px)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            width: "200px",
-            height: "200px",
-            borderRadius: "50%",
-            background: "var(--accent-blue)",
-            opacity: 0.1,
-            bottom: "-60px",
-            left: "-60px",
-            filter: "blur(40px)",
-          }}
-        />
+      <div className="relative px-12 py-16 overflow-hidden text-center glass-heavy">
+        <div className="absolute w-75 h-75 rounded-[50%] bg-(image:--gradient-brand-vivid) opacity-8 -top-25 -right-20 blur-2xl" />
+        <div className="-bottom-15 -left-15 absolute opacity-10 blur-2xl rounded-[50%] w-50 h-50 bg-accent-blue" />
 
-        <span
-          className="badge badge-gradient"
-          style={{ marginBottom: "20px", display: "inline-flex" }}
-        >
+        <span className="inline-flex shadow-md hover:shadow-lg mb-5 badge badge-gradient">
           Ready to ship?
         </span>
-        <h2
-          style={{
-            maxWidth: "520px",
-            marginInline: "auto",
-            marginBottom: "16px",
-          }}
-        >
-          Start building with <span className="text-gradient">GlassUI</span>{" "}
-          today
+        <h2 className="mx-auto mb-4 max-w-130">
+          Start building with <span className="text-gradient">GlassUI</span>
+          &nbsp; today
         </h2>
-        <p
-          style={{
-            maxWidth: "380px",
-            marginInline: "auto",
-            marginBottom: "32px",
-          }}
-        >
+        <p className="mx-auto mb-8 max-w-95">
           All tokens, surfaces, and components from this page are live in your{" "}
           <code>globals.css</code>. Drop them in and go.
         </p>
-        <div
-          style={{
-            display: "flex",
-            gap: "12px",
-            justifyContent: "center",
-            flexWrap: "wrap",
-          }}
-        >
-          <button
-            className="btn btn-primary"
-            style={{ padding: "14px 32px", fontSize: "1rem", gap: "8px" }}
-          >
+        <div className="flex flex-wrap justify-center gap-3">
+          <button className="gap-2 px-8 py-3.5 text-lg btn btn-primary">
             Read the docs <ArrowIcon />
           </button>
-          <button
-            className="btn btn-secondary"
-            style={{ padding: "13px 28px", fontSize: "1rem" }}
-          >
+          <button className="gap-2 px-8 py-3.5 text-lg btn btn-secondary">
             View on GitHub
           </button>
         </div>
