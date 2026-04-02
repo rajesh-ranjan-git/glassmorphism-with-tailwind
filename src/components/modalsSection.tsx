@@ -9,62 +9,20 @@ const ModalsSection = () => {
         <h2>Modal & dialog surfaces</h2>
       </div>
 
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <div
-          className="glass-heavy"
-          style={{
-            maxWidth: "460px",
-            width: "100%",
-            padding: "40px",
-            textAlign: "center",
-          }}
-        >
-          <div
-            style={{
-              width: "56px",
-              height: "56px",
-              borderRadius: "16px",
-              background: "var(--gradient-brand-vivid)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              marginInline: "auto",
-              marginBottom: "20px",
-              boxShadow: "0 8px 24px rgba(139,92,246,0.4)",
-            }}
-          >
+      <div className="flex justify-center">
+        <div className="p-10 w-full max-w-115 text-center glass-heavy">
+          <div className="flex justify-center items-center shadow-[0_8px_24px_rgba(139,92,246,0.4)] mx-auto mb-5 rounded-2xl w-14 h-14 bg-(image:--gradient-brand-vivid)">
             <ShieldIcon />
           </div>
-          <span
-            className="badge badge-gradient"
-            style={{ marginBottom: "16px", display: "inline-flex" }}
-          >
+          <span className="inline-flex shadow-md hover:shadow-lg mb-4 badge badge-gradient">
             .glass-heavy
           </span>
-          <h3
-            style={{
-              marginBottom: "12px",
-            }}
-          >
-            Confirm Action
-          </h3>
-          <p
-            style={{
-              fontSize: "0.9375rem",
-              marginBottom: "28px",
-              marginInline: "auto",
-            }}
-          >
+          <h3 className="mb-3">Confirm Action</h3>
+          <p className="mx-auto mb-7">
             This surface uses 80% opacity and 28px blur — ideal for modals,
             drawers, and confirmation dialogs.
           </p>
-          <div
-            style={{
-              display: "flex",
-              gap: "12px",
-              justifyContent: "center",
-            }}
-          >
+          <div className="flex justify-center gap-3">
             <button className="btn btn-secondary">Cancel</button>
             <button className="btn btn-primary">Confirm</button>
           </div>
