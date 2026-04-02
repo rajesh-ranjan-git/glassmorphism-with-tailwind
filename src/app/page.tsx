@@ -19,6 +19,7 @@ import BadgesAndTagsSection from "@/components/badgesAndTagsSection";
 import TypographySection from "@/components/typographySection";
 import FormElementsSection from "@/components/formElementsSection";
 import GradientsSection from "@/components/gradientsSection";
+import AnimationsSection from "@/components/animationsSection";
 
 export default function GlassShowcase() {
   const [dark, setDark] = useState(false);
@@ -69,91 +70,9 @@ export default function GlassShowcase() {
         <FormElementsSection />
 
         <GradientsSection />
+
+        <AnimationsSection />
         {/* Done till here */}
-
-        {/* ══════════════════════════════════════════════
-            SECTION 8 — ANIMATIONS
-        ══════════════════════════════════════════════ */}
-        <section className="mb-25">
-          <div className="mb-12 text-center">
-            <SectionLabel>Animations</SectionLabel>
-            <h2 style={{ fontFamily: "var(--font-display)" }}>
-              Motion utilities
-            </h2>
-          </div>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-              gap: "20px",
-            }}
-          >
-            {[
-              {
-                cls: "animate-fade-in",
-                label: "fade-in",
-                desc: "Fade + slide up",
-              },
-              {
-                cls: "animate-fade-in-scale",
-                label: "fade-in-scale",
-                desc: "Fade + scale up",
-              },
-              {
-                cls: "animate-slide-up",
-                label: "slide-up",
-                desc: "Slides from below",
-              },
-              {
-                cls: "animate-float",
-                label: "float",
-                desc: "Gentle levitation",
-              },
-              {
-                cls: "animate-pulse-glow",
-                label: "pulse-glow",
-                desc: "Purple glow pulse",
-              },
-            ].map((a) => (
-              <div
-                key={a.cls}
-                className={`glass ${a.cls}`}
-                style={{ padding: "24px", textAlign: "center" }}
-              >
-                <div
-                  style={{
-                    width: "48px",
-                    height: "48px",
-                    borderRadius: "14px",
-                    background: "var(--gradient-brand-vivid)",
-                    marginInline: "auto",
-                    marginBottom: "16px",
-                  }}
-                />
-                <code
-                  style={{
-                    fontSize: "0.8rem",
-                    color: "var(--accent-purple)",
-                    display: "block",
-                    marginBottom: "6px",
-                  }}
-                >
-                  .{a.label}
-                </code>
-                <p
-                  style={{
-                    fontSize: "0.8125rem",
-                    color: "var(--text-muted)",
-                    margin: 0,
-                  }}
-                >
-                  {a.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
 
         {/* ══════════════════════════════════════════════
             SECTION 9 — SKELETON LOADER
