@@ -70,11 +70,11 @@ export default function GlassShowcase() {
         <DividersSection />
 
         <ModalsSection />
-        {/* Done till here */}
 
         <PricingCardsSection />
 
         <StatusMessagesSection />
+        {/* Done till here */}
 
         <FooterCtaSection />
       </div>

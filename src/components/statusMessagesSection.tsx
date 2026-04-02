@@ -8,29 +8,9 @@ const StatusMessagesSection = () => {
         <h2>Info, success, warning & error</h2>
       </div>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "32px",
-        }}
-      >
-        <div
-          className="glass"
-          style={{
-            padding: "32px",
-            display: "flex",
-            flexDirection: "column",
-            gap: "14px",
-          }}
-        >
-          <h5
-            style={{
-              marginBottom: "8px",
-            }}
-          >
-            Default — hover for glow
-          </h5>
+      <div className="gap-8 grid grid-cols-2">
+        <div className="flex flex-col gap-3.5 p-8 glass">
+          <h5 className="mb-2">Default — hover for glow</h5>
 
           <div className="alert alert-info">
             <svg
@@ -48,7 +28,7 @@ const StatusMessagesSection = () => {
             </svg>
             <div>
               <p className="alert-title">Information</p>
-              <p style={{ margin: 0, fontSize: "0.875rem" }}>
+              <p className="m-0 text-sm">
                 Your session will expire in 15 minutes. Save your work.
               </p>
             </div>
@@ -69,7 +49,7 @@ const StatusMessagesSection = () => {
             </svg>
             <div>
               <p className="alert-title">Success</p>
-              <p style={{ margin: 0, fontSize: "0.875rem" }}>
+              <p className="m-0 text-sm">
                 Profile updated successfully. Changes are live.
               </p>
             </div>
@@ -91,7 +71,7 @@ const StatusMessagesSection = () => {
             </svg>
             <div>
               <p className="alert-title">Warning</p>
-              <p style={{ margin: 0, fontSize: "0.875rem" }}>
+              <p className="m-0 text-sm">
                 You are approaching your storage limit (87% used).
               </p>
             </div>
@@ -113,25 +93,16 @@ const StatusMessagesSection = () => {
             </svg>
             <div>
               <p className="alert-title">Error</p>
-              <p style={{ margin: 0, fontSize: "0.875rem" }}>
+              <p className="m-0 text-sm">
                 Payment failed. Please check your card details.
               </p>
             </div>
           </div>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-          <div
-            className="glass-subtle"
-            style={{ padding: "20px 24px", marginBottom: "4px" }}
-          >
-            <h5
-              style={{
-                marginBottom: "0",
-              }}
-            >
-              Persistent glow (.alert-glow)
-            </h5>
+        <div className="flex flex-col gap-3.5">
+          <div className="mb-1 px-6 py-5 glass-subtle">
+            <h5 className="mb-0">Persistent glow (.alert-glow)</h5>
           </div>
 
           <div className="alert alert-info alert-glow">
@@ -186,10 +157,7 @@ const StatusMessagesSection = () => {
             </span>
           </div>
 
-          <div
-            className="alert alert-error alert-pulse"
-            style={{ alignItems: "center" }}
-          >
+          <div className="items-center alert alert-error alert-pulse">
             <svg
               className="alert-icon"
               viewBox="0 0 24 24"
@@ -203,7 +171,7 @@ const StatusMessagesSection = () => {
               <line x1="15" y1="9" x2="9" y2="15" />
               <line x1="9" y1="9" x2="15" y2="15" />
             </svg>
-            <span style={{ flex: 1 }}>
+            <span className="flex-1">
               Critical error — pulsing red glow for urgent failures.
             </span>
             <button className="alert-dismiss" aria-label="Dismiss">
