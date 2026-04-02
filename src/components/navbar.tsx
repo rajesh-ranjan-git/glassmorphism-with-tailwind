@@ -15,7 +15,7 @@ const Navbar = ({ dark, setDark }: ThemeToggleProps) => {
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="hidden badge badge-blue">v1.0</span>
+          <span className="badge badge-blue">v1.0</span>
           <button className="text-sm btn btn-ghost">Docs</button>
           <button className="text-sm btn btn-ghost">GitHub</button>
           <button
