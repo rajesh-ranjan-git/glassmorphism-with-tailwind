@@ -74,7 +74,6 @@ export default function GlassShowcase() {
         <PricingCardsSection />
 
         <StatusMessagesSection />
-        {/* Done till here */}
 
         <FooterCtaSection />
       </div>

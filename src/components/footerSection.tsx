@@ -3,46 +3,13 @@ import { MoonIcon, SparkleIcon, SunIcon } from "@/components/icons";
 
 const FooterSection = ({ dark, setDark }: ThemeToggleProps) => {
   return (
-    <footer
-      className="glass-nav"
-      style={{
-        marginTop: "0",
-        padding: "24px",
-        borderTop: "1px solid var(--border-default)",
-        borderBottom: "none",
-      }}
-    >
-      <div
-        className="container"
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexWrap: "wrap",
-          gap: "12px",
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <div
-            style={{
-              width: "22px",
-              height: "22px",
-              borderRadius: "6px",
-              background: "var(--gradient-brand-vivid)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
+    <footer className="glass-nav mt-0 p-6 border-t border-(--border-default) border-b-0">
+      <div className="flex flex-wrap justify-between items-center gap-3 container">
+        <div className="flex items-center gap-2">
+          <div className="w-5.5 h-5.5 bg-(image:--gradient-brand-vivid) flex items-center justify-center rounded-sm">
             <SparkleIcon />
           </div>
-          <span
-            style={{
-              fontFamily: "var(--font-display)",
-              fontWeight: 700,
-              fontSize: "0.9rem",
-            }}
-          >
+          <span className="font-tourney font-bold text-gradient text-lg">
             GlassUI
           </span>
         </div>
@@ -50,9 +17,8 @@ const FooterSection = ({ dark, setDark }: ThemeToggleProps) => {
           Built with the Glassmorphism Design System · Blue × Purple
         </small>
         <button
-          className="btn-icon"
+          className="text-text-secondary btn-icon"
           onClick={() => setDark((d) => !d)}
-          style={{ color: "var(--text-secondary)" }}
           aria-label="Toggle theme"
         >
           {dark ? <SunIcon /> : <MoonIcon />}
