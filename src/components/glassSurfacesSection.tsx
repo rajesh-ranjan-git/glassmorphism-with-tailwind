@@ -15,7 +15,7 @@ const GlassSurfacesSection = () => {
       </div>
 
       <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))]">
-        <div className="p-7 animate-slide-up delay-0 glass">
+        <div className="p-7 animate-delay-[0ms] animate-slide-up glass">
           <div className="flex justify-between items-center mb-3">
             <span className="badge badge-blue">.glass</span>
             <LayersIcon />
@@ -26,7 +26,7 @@ const GlassSurfacesSection = () => {
           </p>
         </div>
 
-        <div className="p-7 animate-slide-up delay-60 glass-interactive">
+        <div className="p-7 animate-delay-[60ms] animate-slide-up glass-interactive">
           <div className="flex justify-between items-center mb-3">
             <span className="badge badge-purple">.glass-interactive</span>
             <ZapIcon />
@@ -37,7 +37,7 @@ const GlassSurfacesSection = () => {
           </p>
         </div>
 
-        <div className="p-7 animate-slide-up delay-120 glass-accent">
+        <div className="p-7 animate-delay-[120ms] animate-slide-up glass-accent">
           <div className="flex justify-between items-center mb-3">
             <span className="badge badge-gradient">.glass-accent</span>
             <SparkleIcon />
@@ -48,7 +48,7 @@ const GlassSurfacesSection = () => {
           </p>
         </div>
 
-        <div className="p-7 animate-slide-up delay-180 glass-subtle">
+        <div className="p-7 animate-delay-[180ms] animate-slide-up glass-subtle">
           <div className="flex justify-between items-center mb-3">
             <span className="font-poppins font-semibold text-text-muted text-xs">
               .glass-subtle
@@ -61,7 +61,7 @@ const GlassSurfacesSection = () => {
           </p>
         </div>
 
-        <div className="p-7 animate-slide-up delay-240 glass-heavy">
+        <div className="p-7 animate-delay-[240ms] animate-slide-up glass-heavy">
           <div className="flex justify-between items-center mb-3">
             <span className="badge badge-purple">.glass-heavy</span>
             <LayersIcon />
@@ -72,7 +72,7 @@ const GlassSurfacesSection = () => {
           </p>
         </div>
 
-        <div className="p-7 border-glass-border-accent animate-pulse-glow animate-slide-up delay-300 glass-interactive">
+        <div className="p-7 border-glass-border-accent animate-delay-[300ms] animate-pulse-glow animate-slide-up glass-interactive">
           <p className="font-semibold text-xs uppercase tracking-widest text-accent-purple">
             Featured Card
           </p>
