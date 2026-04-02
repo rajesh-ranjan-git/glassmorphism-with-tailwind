@@ -476,11 +476,13 @@
   .glass-interactive {
     composes: glass;
     cursor: pointer;
+    border: 1px solid var(--glass-border);
+    border-color: var(--glass-border-accent);
+    border-radius: var(--border-radius-xl);
   }
   .glass-interactive:hover {
     background: var(--glass-bg-hover);
     box-shadow: var(--glass-shadow-hover);
-    border-color: var(--glass-border-accent);
     transform: translateY(-2px);
   }
 
