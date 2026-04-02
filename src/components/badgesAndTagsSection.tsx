@@ -25,9 +25,10 @@ const BadgesAndTagsSection = () => {
         <div className="divider-gradient" />
 
         <p className="text-text-secondary text-sm">
-          Use <code>.badge-blue</code> for status/version info,&nbsp;
-          <code>.badge-purple</code> for premium labels, and&nbsp;
-          <code>.badge-gradient</code> sparingly for "New" / "Hot" callouts.
+          Use <code>.badge-blue</code>&nbsp;for status/version info,&nbsp;
+          <code>.badge-purple</code>&nbsp;for premium labels, and&nbsp;
+          <code>.badge-gradient</code>&nbsp;sparingly for "New" / "Hot"
+          callouts.
         </p>
       </div>
     </section>
