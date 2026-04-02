@@ -20,10 +20,10 @@ import TypographySection from "@/components/typographySection";
 import FormElementsSection from "@/components/formElementsSection";
 import GradientsSection from "@/components/gradientsSection";
 import AnimationsSection from "@/components/animationsSection";
+import SkeletonLoadersSection from "@/components/skeletonLoadersSection";
 
 export default function GlassShowcase() {
   const [dark, setDark] = useState(false);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("activeTheme");
@@ -44,11 +44,6 @@ export default function GlassShowcase() {
 
     localStorage.setItem("activeTheme", dark ? "dark" : "light");
   }, [dark]);
-
-  useEffect(() => {
-    const t = setTimeout(() => setLoading(false), 1800);
-    return () => clearTimeout(t);
-  }, []);
 
   return (
     <main className="bg-bg-page min-h-dvh overflow-x-hidden font-poppins text-text-primary">
@@ -72,178 +67,9 @@ export default function GlassShowcase() {
         <GradientsSection />
 
         <AnimationsSection />
+
+        <SkeletonLoadersSection />
         {/* Done till here */}
-
-        {/* ══════════════════════════════════════════════
-            SECTION 9 — SKELETON LOADER
-        ══════════════════════════════════════════════ */}
-        <section className="mb-25">
-          <div className="mb-12 text-center">
-            <SectionLabel>Loading States</SectionLabel>
-            <h2 style={{ fontFamily: "var(--font-display)" }}>
-              Skeleton shimmer
-            </h2>
-          </div>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "24px",
-            }}
-          >
-            {/* Skeleton card */}
-            <div className="glass" style={{ padding: "28px" }}>
-              <h5
-                style={{
-                  fontFamily: "var(--font-display)",
-                  marginBottom: "20px",
-                }}
-              >
-                Loading state
-              </h5>
-              <div
-                style={{ display: "flex", gap: "12px", marginBottom: "16px" }}
-              >
-                <div
-                  className="skeleton"
-                  style={{
-                    width: "44px",
-                    height: "44px",
-                    borderRadius: "50%",
-                    flexShrink: 0,
-                  }}
-                />
-                <div style={{ flex: 1 }}>
-                  <div
-                    className="skeleton"
-                    style={{
-                      height: "14px",
-                      marginBottom: "8px",
-                      width: "60%",
-                    }}
-                  />
-                  <div
-                    className="skeleton"
-                    style={{ height: "12px", width: "40%" }}
-                  />
-                </div>
-              </div>
-              <div
-                className="skeleton"
-                style={{ height: "12px", marginBottom: "8px" }}
-              />
-              <div
-                className="skeleton"
-                style={{ height: "12px", marginBottom: "8px", width: "85%" }}
-              />
-              <div
-                className="skeleton"
-                style={{ height: "12px", width: "70%" }}
-              />
-            </div>
-
-            {/* Loaded state */}
-            <div className="glass" style={{ padding: "28px" }}>
-              <h5
-                style={{
-                  fontFamily: "var(--font-display)",
-                  marginBottom: "20px",
-                }}
-              >
-                {loading ? "Fetching data…" : "Loaded ✓"}
-              </h5>
-              {loading ? (
-                <>
-                  <div
-                    style={{
-                      display: "flex",
-                      gap: "12px",
-                      marginBottom: "16px",
-                    }}
-                  >
-                    <div
-                      className="skeleton"
-                      style={{
-                        width: "44px",
-                        height: "44px",
-                        borderRadius: "50%",
-                        flexShrink: 0,
-                      }}
-                    />
-                    <div style={{ flex: 1 }}>
-                      <div
-                        className="skeleton"
-                        style={{
-                          height: "14px",
-                          marginBottom: "8px",
-                          width: "55%",
-                        }}
-                      />
-                      <div
-                        className="skeleton"
-                        style={{ height: "12px", width: "35%" }}
-                      />
-                    </div>
-                  </div>
-                  <div
-                    className="skeleton"
-                    style={{ height: "12px", marginBottom: "8px" }}
-                  />
-                  <div
-                    className="skeleton"
-                    style={{ height: "12px", width: "80%" }}
-                  />
-                </>
-              ) : (
-                <div className="animate-fade-in">
-                  <div
-                    style={{
-                      display: "flex",
-                      gap: "12px",
-                      marginBottom: "16px",
-                      alignItems: "center",
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: "44px",
-                        height: "44px",
-                        borderRadius: "50%",
-                        background: "var(--gradient-brand-vivid)",
-                        flexShrink: 0,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        color: "#fff",
-                      }}
-                    >
-                      <SparkleIcon />
-                    </div>
-                    <div>
-                      <p
-                        style={{
-                          fontWeight: 600,
-                          color: "var(--text-primary)",
-                          margin: 0,
-                        }}
-                      >
-                        Ada Lovelace
-                      </p>
-                      <small>ada@glasssystem.dev</small>
-                    </div>
-                  </div>
-                  <p style={{ fontSize: "0.875rem", marginBottom: "12px" }}>
-                    Data loaded successfully after simulated 1.8s delay.
-                  </p>
-                  <span className="badge badge-gradient">
-                    <CheckIcon /> Resolved
-                  </span>
-                </div>
-              )}
-            </div>
-          </div>
-        </section>
 
         {/* ══════════════════════════════════════════════
             SECTION 10 — DIVIDERS
@@ -251,9 +77,7 @@ export default function GlassShowcase() {
         <section className="mb-25">
           <div className="mb-12 text-center">
             <SectionLabel>Dividers</SectionLabel>
-            <h2 style={{ fontFamily: "var(--font-display)" }}>
-              Separators & section breaks
-            </h2>
+            <h2>Separators & section breaks</h2>
           </div>
 
           <div className="glass" style={{ padding: "40px" }}>
@@ -278,9 +102,7 @@ export default function GlassShowcase() {
         <section className="mb-25">
           <div className="mb-12 text-center">
             <SectionLabel>Heavy Glass</SectionLabel>
-            <h2 style={{ fontFamily: "var(--font-display)" }}>
-              Modal & dialog surfaces
-            </h2>
+            <h2>Modal & dialog surfaces</h2>
           </div>
 
           <div style={{ display: "flex", justifyContent: "center" }}>
@@ -317,7 +139,6 @@ export default function GlassShowcase() {
               </span>
               <h3
                 style={{
-                  fontFamily: "var(--font-display)",
                   marginBottom: "12px",
                 }}
               >
@@ -353,7 +174,7 @@ export default function GlassShowcase() {
         <section className="mb-25">
           <div className="mb-12 text-center">
             <SectionLabel>Real-world Example</SectionLabel>
-            <h2 style={{ fontFamily: "var(--font-display)" }}>Pricing cards</h2>
+            <h2>Pricing cards</h2>
           </div>
 
           <div
@@ -578,9 +399,7 @@ export default function GlassShowcase() {
         <section className="mb-25">
           <div className="mb-12 text-center">
             <SectionLabel>Status Messages</SectionLabel>
-            <h2 style={{ fontFamily: "var(--font-display)" }}>
-              Info, success, warning & error
-            </h2>
+            <h2>Info, success, warning & error</h2>
           </div>
 
           <div
@@ -602,7 +421,6 @@ export default function GlassShowcase() {
             >
               <h5
                 style={{
-                  fontFamily: "var(--font-display)",
                   marginBottom: "8px",
                 }}
               >
@@ -707,7 +525,6 @@ export default function GlassShowcase() {
               >
                 <h5
                   style={{
-                    fontFamily: "var(--font-display)",
                     marginBottom: "0",
                   }}
                 >
@@ -858,7 +675,6 @@ export default function GlassShowcase() {
             </span>
             <h2
               style={{
-                fontFamily: "var(--font-display)",
                 maxWidth: "520px",
                 marginInline: "auto",
                 marginBottom: "16px",

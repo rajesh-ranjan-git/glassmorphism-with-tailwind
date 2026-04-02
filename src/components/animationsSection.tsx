@@ -37,7 +37,7 @@ const AnimationsSection = () => {
           },
         ].map((a) => (
           <div key={a.cls} className={`glass p-6 text-center ${a.cls}`}>
-            <div className="bg-gradient-brand-vivid mx-auto mb-4 rounded-xl w-12 h-12" />
+            <div className="bg-(image:--gradient-brand-vivid) mx-auto mb-4 rounded-xl w-12 h-12" />
             <code className="block mb-1.5 text-sm text-accent-purple">
               .{a.label}
             </code>
