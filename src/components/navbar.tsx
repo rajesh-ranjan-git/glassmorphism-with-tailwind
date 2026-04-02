@@ -1,7 +1,7 @@
-import { NavbarProps } from "@/types/propTypes";
+import { ThemeToggleProps } from "@/types/propTypes";
 import { MoonIcon, SparkleIcon, SunIcon } from "@/components/icons";
 
-const Navbar = ({ dark, setDark }: NavbarProps) => {
+const Navbar = ({ dark, setDark }: ThemeToggleProps) => {
   return (
     <nav className="top-0 fixed px-6 w-full glass-nav z-(--z-sticky) backdrop-blur-sm">
       <div className="flex justify-between items-center h-16 container">

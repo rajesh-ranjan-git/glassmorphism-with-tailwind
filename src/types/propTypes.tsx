@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 
-export interface NavbarProps {
+export interface ThemeToggleProps {
   dark: boolean;
   setDark: Dispatch<SetStateAction<boolean>>;
 }

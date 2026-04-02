@@ -423,7 +423,6 @@
 
   p {
     color: var(--text-secondary);
-    max-width: 68ch;
   }
 
   a {
@@ -849,6 +848,30 @@
       var(--accent-blue),
       var(--accent-purple),
       transparent
+    );
+    opacity: 0.4;
+    margin: var(--space-6) 0;
+  }
+  .divider-gradient-to-right {
+    border: none;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--accent-blue),
+      var(--accent-purple),
+      transparent
+    );
+    opacity: 0.4;
+    margin: var(--space-6) 0;
+  }
+  .divider-gradient-to-left {
+    border: none;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--accent-blue),
+      var(--accent-purple)
     );
     opacity: 0.4;
     margin: var(--space-6) 0;
